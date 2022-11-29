@@ -249,16 +249,16 @@ public:
      * @param filename the filename of the input file
      */
          static void outputFileWriter(string flight_path, double haversine, string filename){
+
+             ofstream outputStream;
+             outputStream.open(filename + "_output", ios::out);
              
-             string file = "/Users/admin/Desktop/xCode/Airliner/AirlinerC++/AirlinerC++/flight plan";
-             //string file = "flight plan";
-             ofstream outputStream (file);
              cout << endl;
              cout << "> Writing to output file..." << endl;
              
              vector<string> output;
              output = Route::stringToVec(flight_path);
-             
+
              // write to file
              outputStream << " >> Flight Plan <<" << endl;
              for(int i = 1; i < output.size() - 1; i++){
@@ -288,3 +288,4 @@ string ReadWrite::Destination_City;
 string ReadWrite::Destination_Country;
 
 #endif /* read_write_h_h */
+
