@@ -17,12 +17,13 @@
 #include <vector>
 #include <deque>
 
-#include "airports_h.h"
-
 using namespace std;
 
 /**
- * # This class contains functions that read the routes.csv file and utilize its data. The functions within create two maps. The first stores the iata code of a source airport and the iata codes of all destination airports that can be reached from that source. The second stores all the airlines that go from a particular source airport to a particular destination airport.
+ * # This class contains functions that read the routes.csv file and utilize its data. 
+ * The functions within create two maps. The first stores the iata code of a source airport and the iata codes 
+ * of all destination airports that can be reached from that source. The second stores all the airlines that go from 
+ * a particular source airport to a particular destination airport.
  */
 class Route{
     
@@ -342,12 +343,12 @@ public:
                     frontier.emplace_back(child);
                 }
             }
-            cout << "no route from this airport: " << endl;
-            continue;
-//            else{
-//                cout << "no route from this airport: " << endl;
-//                break;
-//            }
+//            cout << "no route from this airport: " << parent << endl;
+//            continue;
+            else{
+                cout << "no route from this airport: " << endl;
+                break;
+            }
         }
         return NULL;
         
